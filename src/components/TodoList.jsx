@@ -1,7 +1,7 @@
 
 import { TodoItem } from './TodoItem'
 
-export const TodoList = ({ todosValues = []  , onDeleteTodo }) => {
+export const TodoList = ({ todosValues = []  , onDeleteTodo , onCroosOut}) => {
     return (
         <ul className=" list-disc">
 
@@ -11,6 +11,7 @@ export const TodoList = ({ todosValues = []  , onDeleteTodo }) => {
                         key={todo.id} 
                         todo={todo} 
                         onDeleteTodo={onDeleteTodo}
+                        onCroosOut = {onCroosOut}
                     />
                 ))
             }
