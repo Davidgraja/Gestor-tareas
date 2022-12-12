@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 
 export const TodoItem = ( {todo  , onDeleteTodo , onCroosOut} ) => {
     return (
@@ -22,4 +24,10 @@ export const TodoItem = ( {todo  , onDeleteTodo , onCroosOut} ) => {
             </li>
         </>
     )
+}
+
+TodoItem.propTypes = {
+    todo : PropTypes.object.isRequired,
+    onDeleteTodo: PropTypes.func.isRequired,
+    onCroosOut: PropTypes.func.isRequired
 }
