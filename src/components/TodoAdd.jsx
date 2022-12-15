@@ -29,14 +29,15 @@ export const TodoAdd = ( { onNewTodo }) => {
                     value={ description }
                     onChange={ onEventInput }
                     name={'description'}
+                    autoComplete={'off'}
                     required
                 />
 
                 <button 
                     type="submit" 
-                    className="ml-1 p-1 px-2 border rounded-md bg-blue-300 text-white hover:bg-white hover:text-gray-500 hover:border-blue-300 mt-2" 
+                    className="ml-1 p-1 px-2 border rounded-md bg-indigo-300 text-white hover:bg-white hover:text-gray-500 hover:border-blue-300 mt-2" 
                 >
-                    Agregar
+                    Añadir
                 </button>
             </form>
         </>

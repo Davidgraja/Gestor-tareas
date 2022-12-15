@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 export const TodoItem = ( {todo  , onDeleteTodo , onCroosOut} ) => {
     return (
         <>
-            <li  className=" mt-2 w-2/3 p-3 flex justify-between items-center shadow-sm shadow-gray-400">
+            <li  className=" w-10/12 mx-auto my-4  rounded border-l-2 border-indigo-300   p-3 flex  justify-between items-center shadow-sm shadow-gray-300 md:w-4/5 md:mx-0">
                 <p 
-                    className= {`break-all mr-3 hover:cursor-pointer ${ (todo.done) ? 'line-through' : '' }`}
+                    className= {`break-all mr-3 hover:cursor-pointer ${ (todo.done) ? 'line-through decoration-black-300 decoration-2' : '' }`}
                     title="Click para tachar la tarea"
                     onClick={ ()=> onCroosOut( todo.id ) }
                 >
