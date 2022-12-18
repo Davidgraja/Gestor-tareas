@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-
 export const TodoItem = ( {todo  , onDeleteTodo , onCroosOut , onEventEditTodo } ) => {
+
     const eventEdit = () =>{
         
         onEventEditTodo(todo)
@@ -18,7 +18,6 @@ export const TodoItem = ( {todo  , onDeleteTodo , onCroosOut , onEventEditTodo }
                     { todo.description }
                 
                 </p>
-
 
                 <section className=' flex'>
                 <button 

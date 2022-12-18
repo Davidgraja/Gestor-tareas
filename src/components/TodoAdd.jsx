@@ -26,8 +26,8 @@ export const TodoAdd = ( { onNewTodo , editTodo , resetEditTodo , onEditTodo }) 
 
     const onSubmitEdit = (e) =>{
         e.preventDefault();
-
-        const update = e.target.editDescription.value;
+        
+        const update = e.target.description.value;
 
         if(update.trim().length<=1) return;
 

@@ -20,6 +20,7 @@ export const useForm = ( states = {} ) => {
     return {
         ...formState,
         onEventInput,
-        onResetForm
+        onResetForm,
+        setFormState
     }
 }

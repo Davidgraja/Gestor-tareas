@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react';
+import { useForm } from '../hooks/useForm';
 
 export const TodoFormEdit = ({editTodo , onInputSubmit , resetEditTodo}) => {
-    const [update, setUpdate] = useState(editTodo.description)
+
+    const {description , onEventInput ,setFormState} = useForm(editTodo)
 
     useEffect(()=>{
-        setUpdate(editTodo.description)
+        setFormState(editTodo)
     }, [editTodo])
-
-    const prueba = ({target}) =>{
-        setUpdate(target.value)
-    }
 
     return (
         <>
@@ -18,9 +16,9 @@ export const TodoFormEdit = ({editTodo , onInputSubmit , resetEditTodo}) => {
                     type="text"
                     placeholder="¿Cual sera tu proxima Tarea?"
                     className="border p-1 min-w-fit  w-1/2 focus:outline-indigo-200 pr-2 placeholder:text-base text-gray-500"
-                    value={ update }
-                    onChange={prueba}
-                    name={'editDescription'}
+                    value={ description }
+                    onChange={onEventInput}
+                    name={'description'}
                     autoComplete={'off'}
                     required
                 />
