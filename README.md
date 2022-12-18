@@ -10,4 +10,4 @@ Este proyecto esta construido con las siguientes tecnologias:
 
 Cabe recalcar de que  este proyecto esta construido sobre varios hooks de React y sobre algunos custom hooks necesarios para el proyecto 
 
-Link hacia el  [Gestor de notas](https://gestor-tareas-davidgp.netlify.app/)
+Link hacia el  [Gestor de notas](https://gestor-notas-davidgp.netlify.app/)
