@@ -17,7 +17,6 @@ export const useForm = ( states = {} ) => {
         setFormState(states)
     }
 
-
     return {
         ...formState,
         onEventInput,

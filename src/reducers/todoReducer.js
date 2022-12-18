@@ -1,7 +1,7 @@
 export const  todoReducer = (initialState = [] , action) =>{
     switch (action.type) {
         case 'add todo':
-            return [ ...initialState , action.payload ]
+            return [action.payload  ,...initialState ]
 
         case 'delete todo':
             return initialState.filter(todo => todo.id != action.payload)
@@ -15,6 +15,18 @@ export const  todoReducer = (initialState = [] , action) =>{
                     }
                 }
                 
+                return todo;
+            })
+        
+        case 'update todo':
+            return initialState.map(todo => {
+                if(todo.id == action.payload.id){
+                    return{
+                        ...todo,
+                        description : action.payload.description
+                    }
+                }
+
                 return todo;
             })
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { TodoItem } from './TodoItem'
 
-export const TodoList = ({ todosValues = []  , onDeleteTodo , onCroosOut}) => {
+export const TodoList = ({ todosValues = []  , onDeleteTodo , onCroosOut ,onEventEditTodo}) => {
     return (
         <ul className=" list-disc">
 
@@ -12,6 +12,7 @@ export const TodoList = ({ todosValues = []  , onDeleteTodo , onCroosOut}) => {
                         todo={todo} 
                         onDeleteTodo={onDeleteTodo}
                         onCroosOut = {onCroosOut}
+                        onEventEditTodo = { onEventEditTodo }
                     />
                 ))
             }

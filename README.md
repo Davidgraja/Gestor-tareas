@@ -1,5 +1,5 @@
 # Gestor de notas
-Este es un gestor de notas rapidas la cual nos permitira hacer rapidamente a aquellas notas y tareas que no deseamos olvidar.
+Este es un gestor de notas rapidas la cual nos permitira acceder rapidamente a aquellas notas y tareas que no deseamos olvidar.
 
 Este proyecto esta construido con las siguientes tecnologias:
 - [React](https://es.reactjs.org/)

@@ -43,12 +43,18 @@ export const useTodos = () => {
         actionDispatch(type , payload);
     }
 
+    const handleEditTodo = (payload) =>{
+        const type = 'update todo'
+        actionDispatch(type , payload);
+    }
+
     return {
         todos,
         handleNewTodo,
         handleCrossOutTodo,
         handleDeleteTodo,
         pendingTodos,
-        todosCounter
+        todosCounter,
+        handleEditTodo
     }
 }

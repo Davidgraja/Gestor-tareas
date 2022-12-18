@@ -1,8 +1,12 @@
-import { useForm } from "../hooks/useForm";
 
-export const TodoAdd = ( { onNewTodo }) => {
+import { useForm } from "../hooks/useForm";
+import { TodoFormAdd , TodoFormEdit } from "./";
+
+export const TodoAdd = ( { onNewTodo , editTodo , resetEditTodo , onEditTodo }) => {
+
     
-    const {description , onEventInput , onResetForm} = useForm({description : ''});
+    const {description  , onEventInput , onResetForm } = useForm({description : ''});
+
 
     const onInputSubmit = (e) =>{
         e.preventDefault();
@@ -16,30 +20,42 @@ export const TodoAdd = ( { onNewTodo }) => {
         };
 
         onNewTodo( newTodo );
-        onResetForm()
+        onResetForm();
 
     }
+
+    const onSubmitEdit = (e) =>{
+        e.preventDefault();
+
+        const update = e.target.editDescription.value;
+
+        if(update.trim().length<=1) return;
+
+        const updateTodo = {
+            id : editTodo.id,
+            description : update
+        };
+
+        onEditTodo(updateTodo);
+        resetEditTodo('');
+
+    }
+
+    const cancelEdit = () =>{
+        resetEditTodo('');
+        console.clear()
+    }
+
     return (
         <>
-            <form  onSubmit={ onInputSubmit } className={'pt-2'} >
-                <input 
-                    type="text"
-                    placeholder="¿Cual sera tu proxima Tarea?"
-                    className="border p-1 min-w-fit  w-1/2 focus:outline-indigo-200 pr-2 placeholder:text-base text-gray-500"
-                    value={ description }
-                    onChange={ onEventInput }
-                    name={'description'}
-                    autoComplete={'off'}
-                    required
-                />
 
-                <button 
-                    type="submit" 
-                    className="ml-1 p-1 px-2 border rounded-md bg-indigo-300 text-white hover:bg-white hover:text-gray-500 hover:border-blue-300 mt-2" 
-                >
-                    Añadir
-                </button>
-            </form>
+            {
+                !editTodo ? 
+                <TodoFormAdd onInputSubmit={ onInputSubmit } description={ description } onEventInput={ onEventInput } />
+                :
+                <TodoFormEdit  onInputSubmit={ onSubmitEdit} editTodo = { editTodo } resetEditTodo = {cancelEdit} />
+
+            }
         </>
     )
 }
